@@ -1,0 +1,102 @@
+{% include "header.html" %}
+<div class="container-fluid recommend-container">
+  <div class="row">
+    <div class="col-lg-4">
+      <h1>Recommend Product</h1>
+    </div>
+    <div class="col-lg-7 search-box">
+      <form action="/recommend" method='POST'>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" name="product" placeholder="Search For Product Name"
+            aria-label="Recipient's username" aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button type="submit" class="btn btn-outline-secondary" type="button">Search</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+
+    <div class="col-lg-4 product-img">
+      <p>{{flipkarProductDetails['name']}}</p>
+      {% if Ebay_APIresponse!=1 %}
+      <img src="{{flipkarProductDetails['thumbnail']}}" alt="">
+
+    </div>
+    <div class="col-lg-6">
+      <br>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Type</th>
+            <th scope="col">FlipKart</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Name</th>
+            <td>{{flipkarProductDetails['name']}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Stars</th>
+            <td>NA</td>
+          </tr>
+          <tr>
+            <th scope="row">Review</th>
+            <td>NA</td>
+          </tr>
+          <tr>
+            <th scope="row">Original Price</th>
+            <td>{{flipkarProductDetails['original_price']}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Current Price</th>
+            <td>₹{{flipkarProductDetails['current_price']}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Product Url</th>
+            <td><a href="{{flipkarProductDetails['link']}}">{{flipkarProductDetails['link']}}</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+{% endif %}
+      {% if Ebay_APIresponse!=1 %}
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Type</th>
+            <th scope="col">Ebay</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Name</th>
+            <td>{{Ebay_APIresponse[2]['title']}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Stars</th>
+            <td>{{Ebay_APIresponse[1]['rating']}}</td>
+          </tr>
+            <tr>
+            <th scope="row">Price In Rupee</th>
+            <td>₹{{priceInRupess}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Price</th>
+            <td>{{Ebay_APIresponse[3]['price']}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Product Url</th>
+            <td><a href="{{Ebay_APIresponse[3]['url']}}">{{Ebay_APIresponse[3]['url']}}</a></td>
+          </tr>
+        </tbody>
+      </table>
+      {% endif %}
+      <br>
+    </div>
+  </div>
+</div>
+</div>
+{% include "footer.html" %}

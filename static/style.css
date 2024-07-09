@@ -1,0 +1,54 @@
+.navbar{
+   padding-left: 2%;
+   /* padding-top: 1%; */
+   /* padding-bottom: 1%; */
+}
+.navbar-brand{
+   font-weight: bold;
+   font-size: 2rem;
+}
+.navbar-nav{
+   margin-left: 55%;
+}
+.nav-item{
+   padding-left: 8%;
+}
+.banner-img img{
+   margin-top: 8%;
+   width: 60%;
+   margin-left: 15%;
+}
+
+.banner-heading{
+   margin-top: 10%;
+   padding-left: 2%;
+}
+.banner-heading h1{
+   font-weight: bold;
+   font-size: 3rem;
+}
+.recommend-container{
+   margin: 2%;
+
+}
+.search-box{
+   margin-top: 1%;
+}
+.product-img img{
+   width: 70%;
+   height: 60vh;
+}
+
+.login-container{
+   width: 25%;
+   margin-top: 7%;
+   padding: 2%;
+}
+
+.Register-container{
+   width: 25%;
+   margin-top: 3%;
+   padding: 2%;
+}
+
+

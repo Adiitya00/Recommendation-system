@@ -1,0 +1,21 @@
+{% include "header.html" %}
+
+<div class="container-fluid">
+   <div class="row">
+      <div class="col-lg-5 banner-heading">
+         <h1 class='heading'>Explore Our Top </h1>
+            <h1>Product Recommendations</h1>
+         <p class='sub-headging'>Discover the Best Products for Your Needs and Preferences</p>
+         {% if current_user.is_authenticated: %}
+         <button type="button" class="btn btn-primary btn-lg" onclick="window.location.href='{{ url_for( 'recommend') }}';">Recommend</button>
+         {%else:%}
+         <button type="button" class="btn btn-primary btn-lg" onclick="window.location.href='{{ url_for( 'login') }}';">LogIn</button>
+         <button type="button" class="btn btn-outline-primary btn-lg" onclick="window.location.href='{{ url_for( 'register') }}';">Register</button>
+         {% endif %}
+      </div>
+      <div class="col-lg-7 banner-img">
+   <img src="https://www.touchmediaads.com/myimg/gmb/ecom1.5.gif" alt="">
+</div>
+</div>
+</div>
+{% include "footer.html" %}
